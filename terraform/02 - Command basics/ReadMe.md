@@ -48,26 +48,27 @@ the current state and presents this difference as the output of the terraform pl
 - Supports -auto-approve to apply the changes without asking for a confirmation
 - Supports -target to apply a specific module
 
-#**terraform refresh**
-•	used to reconcile the state Terraform knows about (via its state file) with the real-world infrastructure
-•	does not modify infrastructure, but does modify the state file
-#**terraform destroy**
-•	destroy the infrastructure and all resources
-•	modifies both state and infrastructure
-•	terraform destroy -target can be used to destroy targeted resources
-•	terraform plan -destroy allows creation of destroy plan
+**terraform refresh**
+- Used to reconcile the state Terraform knows about (via its state file) with the real-world infrastructure
+- Does not modify infrastructure, but does modify the state file
 
-#**terraform import**
-•	helps import already-existing external resources, not managed by Terraform, into Terraform state and allow it to manage those resources
-•	Terraform is not able to auto-generate configurations for those imported modules, for now, and requires you to first write the resource definition in Terraform and then import this resource
+**terraform destroy**
+- Destroy the infrastructure and all resources
+- Modifies both state and infrastructure
+  - terraform destroy -target can be used to destroy targeted resources
+  - terraform plan -destroy allows creation of destroy plan
 
-#**terraform taint**
-•	marks a Terraform-managed resource as tainted, forcing it to be destroyed and recreated on the next apply.
-•	will not modify infrastructure, but does modify the state file in order to mark a resource as tainted. Infrastructure and state are changed in next apply.
-•	can be used to taint a resource within a module
+**terraform import**
+- Helps import already-existing external resources, not managed by Terraform, into Terraform state and allow it to manage those resources
+- Terraform is not able to auto-generate configurations for those imported modules, for now, and requires you to first write the resource definition in Terraform and then import this resource
 
-#**terraform fmt**
-•	format to lint the code into a standard format
+**terraform taint**
+- Marks a Terraform-managed resource as tainted, forcing it to be destroyed and recreated on the next apply.
+- Will not modify infrastructure, but does modify the state file in order to mark a resource as tainted. Infrastructure and state are changed in next apply.
+- Can be used to taint a resource within a module
 
-#**terraform console**
-•	command provides an interactive console for evaluating expressions.
+**terraform fmt**
+- Lints the code into a standard format
+
+**terraform console**
+- Provides an interactive console for evaluating expressions.
