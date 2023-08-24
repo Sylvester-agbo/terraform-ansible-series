@@ -28,6 +28,7 @@
 - Static credentials
 - Environmental variables
 - Shared credential / configuration files.
+
 **c) Projects** 
 
 ## 3. Language syntax:
