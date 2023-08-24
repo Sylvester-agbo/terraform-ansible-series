@@ -72,6 +72,4 @@ resource "aws_instance" "ec2demo" {
 
 
 ## Destroy Infrastructure
-
-# Destroy EC2 Instance
-terraform destroy
+    terraform destroy
