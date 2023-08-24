@@ -1,32 +1,37 @@
-**Terraform syllabus:**
-**1. Introduction to terraform:**
-## a) Key concepts:
+# **Terraform syllabus**
+
+## 1. Introduction to terraform
+**a) Key concepts:**
 - What is IAC?
 - What are the benefits of IAC?
 - What is Terraform?
 - Who is the vendor of terraform?
 - How do you write terraform configuration files?
-## b) How to install terraform:
+**b) How to install terraform:**
 - What are the prerequisites for using terraform?
 - How to install terraform on MACOS / Windows using brew /choco
 - How to install Vscode
 - How to install AWS CLI
 - How to configure AWS credentials
-**2. Command basics:**
-## a) Terraform workflow:
+
+## 2. Command basics:
+ **a) Terraform workflow:**
+- What is terraform workflow?
 - terraform init
 - terraform validate
 - terraform fmt
 - terraform plan
 - terraform apply
 - terraform destroy
-## b) Passing credentials to terraform workflow:
+
+**b) Passing credentials to terraform workflow:**
 - Static credentials
 - Environmental variables
 - Shared credential / configuration files.
-## c) Projects - vpc and ec2 instance.
-**3. Language syntax**
-## a) What are terraform top level blocks?
+**c) Projects** 
+
+## 3. Language syntax:
+**a) What are terraform top level blocks?**
 - Terraform settings block
 - Provider block
 - Resource block
@@ -37,52 +42,58 @@
 - Modules block
 - Moved block
 - Import block
-## b) What are makes up a block?
+**b) What are makes up a block?**
 - Arguments
 - Expressions
 - Attributes
 - Meta-arguments
-## c) Projects - vpc and ec2
-**4. Settings**
-- Set up for basic resource creation
+**c) Projects - vpc and ec2**
+
+## 4. Settings
+**a) Set up for basic resource creation**
 - Set up terraform settings block
 - Set up provider block
 - Set up resource block
 - Set up file function for user data
-## project
-**5. Variables and data sources**
-# a) Use of variables to make code reusable
+**b) Projects**
+
+## 5. Variables and data sources
+**a) Use of variables to make code reusable**
 - What are variables?
 - Variable types
 - How to reference variables from lists and maps
 - Variable files
-# b) Data sources
+**b) Data sources**
 - What are data sources
 - How are data sources used?
-**6. Meta arguments**
+
+## 6. Meta arguments
 - Terraform functions
 - Count
 - for Loops over lists and maps
 - for_each loops over sets and maps
 - dynamic blocks using for_each loops
 - Conditionals using ternary operator
-**7. Modules and provisioners**
-# a) Modules
+
+## 7. Modules and provisioners
+**a) Modules**
 - What are modules?
 - Custom modules
 - Official modules
-# b) Provisioners
+**b) Provisioners**
 - File
 - Remote exec
 - Local exec
 - Null resource
-**8. Terraform Backend**
+
+## 8. Terraform Backend
 - Local backend
-- Remote
+- Remote backend
 - State storage using s3
 - DynamoDb state locking
-**9. Local and Remote state data sources**
+
+## 9. Local and Remote state data sources
 - Remote state data source
 - local state data source
 - remote state data source
-**10. Terraform best practices && Interview question**
+## 10. Terraform best practices && Interview question
