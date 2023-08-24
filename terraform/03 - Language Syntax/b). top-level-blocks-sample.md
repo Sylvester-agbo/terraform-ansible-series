@@ -39,11 +39,13 @@ variable "instance_type" {
 }
 ```
 
-# Block-5: **Output Values Block**
+## Block-5: **Output Values Block**
+```
 output "ec2_instance_publicip" {
   description = "EC2 Instance Public IP"
   value       = aws_instance.inst1.public_ip
 }
+```
 
 ## Block-6: **Local Values Block**
  - An example to have a bucket name that is a concatenation of an app name and environment name.
