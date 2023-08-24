@@ -21,7 +21,7 @@ https://www.terraform.io/docs/configuration/syntax.html
       - Data Sources Block
       - Modules Block
       - Moved Blocks
-      - import block
+      - Import block
 
 ## AWS Example of a resource block.
 ```
