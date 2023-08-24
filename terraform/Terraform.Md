@@ -43,12 +43,14 @@
 - Modules block
 - Moved block
 - Import block
-**b) What are makes up a block?**
+
+**b) What makes up a terraform block?**
 - Arguments
 - Expressions
 - Attributes
 - Meta-arguments
-**c) Projects - vpc and ec2**
+
+**c) Projects**
 
 ## 4. Settings
 **a) Set up for basic resource creation**
