@@ -1,3 +1,46 @@
+## Meta-Arguments
+(https://www.terraform.io/docs/language/meta-arguments/)
+- Meta-Arguments change a resource type's behavior (Example: count, for_each)
+
+**depends_on**
+- The depends_on meta-argument, if present, must be a list of references to other resources or child modules in the same calling module. Arbitrary expressions are not allowed in the depends_on argument value, because its value must be known before Terraform knows resource relationships and thus before it can safely evaluate expressions.
+
+**Count**
+- The count meta-argument accepts numeric expressions. However, unlike most arguments, the count value must be known before Terraform performs any remote resource actions. This means count can't refer to any resource attributes that aren't known until after a configuration is applied
+- In blocks where count is set, an additional count object is available in expressions, so you can modify the configuration of each instance. This object has one attribute: **count.index** — The distinct index number (starting with 0) corresponding to this instance.
+
+**for_each**
+- If your instances are almost identical, count is appropriate. If some of their arguments need distinct values that can't be directly derived from an integer, it's safer to use for_each.
+- The for_each meta-argument accepts a map or a set of strings, and creates an instance for each item in that map or set. Each instance has a distinct infrastructure object associated with it, and each is separately created, updated, or destroyed when the configuration is applied.
+- In blocks where for_each is set, an additional each object is available in expressions, so you can modify the configuration of each instance. This object has two attributes:
+
+  each.key — The map key (or set member) corresponding to this instance.
+  each.value — The map value corresponding to this instance. (If a set was provided, this is the same as each.key.)
+- The for_each value must be a map or set with one element per desired resource instance. When providing a set, you must use an expression that explicitly returns a set value, like the toset function; to prevent unwanted surprises during conversion, the for_each argument does not implicitly convert lists or tuples to sets.
+  -toset converts its argument to a set value. Explicit type conversions are rarely necessary in Terraform because it will convert types automatically where required. Use the explicit type conversion functions only to normalize types returned in module outputs. Pass a list value to toset to convert it to a set, which will remove any duplicate elements and discard the ordering of the elements.
+
+# map
+resource "azurerm_resource_group" "rg" {
+for_each = {
+a_group = "eastus"
+another_group = "westus2"
+}
+name     = each.key
+location = each.value
+}
+
+# Set of strings
+    resource "aws_iam_user" "the-accounts" {
+      for_each = toset( ["Todd", "James", "Alice", "Dottie"] )
+      name     = each.key
+}
+
+**lifecycle**
+
+
+
+
+
 # Terraform For Loops, Lists, Maps and Count Meta-Argument
 
 ## Step-00: Pre-requisite Note
