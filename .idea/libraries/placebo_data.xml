@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="placebo_data">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Ansible/cloud/cloud-custodian/cloud-custodian/tests/placebo_data.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

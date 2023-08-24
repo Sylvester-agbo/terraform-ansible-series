@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="cache">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Ansible/cloud/cloud-custodian/cloud-custodian/tools/c7n_azure/tests_azure/data/test_cache/cache.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

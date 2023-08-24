@@ -1,17 +1,16 @@
-**How to configure AWS credentials on your system**
+# How to configure AWS credentials on your system
 
-**Pre-requisite:** 
+## Pre-requisite 
 - You must have an AWS Account.
     - [Create an AWS Account](https://portal.aws.amazon.com/billing/signup?nc2=h_ct&src=header_signup&redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start)
 
-- **Role**:
-  -If your terraform server is in the cloud, then create a role and attach the role to your server.
+- If your terraform server is in the cloud, then create a role and attach the role to your server.
 
-- Generate Security Credential s using AWS Management Console
+- Generate Security Credentials using AWS Management Console
     - Go to Services -> IAM -> Users -> "Your-Admin-User" -> Security Credentials -> Create Access Key
 - Configure AWS credentials using SSH Terminal on your local desktop
 
-# **Configure AWS Credentials in command line**
+## **Configure AWS Credentials in command line**
 ```
 $ aws configure
 AWS Access Key ID [None]: AKIASUF7DEFKSIAWMZ7K
@@ -26,6 +25,6 @@ aws s3 ls
 ```
 cat $HOME/.aws/credentials
 ```
-#**Command to reset your AWS credentials incase of a credentials error**:
+## **Command to reset your AWS credentials incase of a credentials error**:
 
-$ for var in AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN AWS_SECURITY_TOKEN ; do eval unset $var ; done
+    $ for var in AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN AWS_SECURITY_TOKEN ; do eval unset $var ; done

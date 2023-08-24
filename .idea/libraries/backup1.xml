@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="backup1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/terraform/projects/terraform-vpc-rdsdb/vpc-rdsdb/ec2_public_module/.terraform/modules/rdsdb/examples/s3-import-mysql/backup.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

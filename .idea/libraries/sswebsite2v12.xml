@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="sswebsite2v12">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/terraform/my_learning/terraform-on-aws-ec2/17-AWS-CloudWatch/cw-synthetics-manifests-v2/sswebsite2/sswebsite2v1.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
