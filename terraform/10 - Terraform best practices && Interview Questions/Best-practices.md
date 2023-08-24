@@ -1,0 +1,12 @@
+## Terraform security:
+- Don't commit the .tfstate file.
+- Configure a backend.(state locking / remote state storage)
+- Back up your state files.Use versioning
+- Keep your backends small.- reduces risks
+- Use one state per environment.
+- Setup backend state locking.
+- Execute Terraform in an automated build.
+- Manipulate state only through the commands.
+- Use variables
+- Use modules
+- Create and attach IAM roles to resources. Create IAM uses and assign least privileges
