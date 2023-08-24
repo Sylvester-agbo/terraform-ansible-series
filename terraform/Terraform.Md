@@ -7,6 +7,7 @@
 - What is Terraform?
 - Who is the vendor of terraform?
 - How do you write terraform configuration files?
+
 **b) How to install terraform:**
 - What are the prerequisites for using terraform?
 - How to install terraform on MACOS / Windows using brew /choco
@@ -58,6 +59,7 @@
 - Set up provider block
 - Set up resource block
 - Set up file function for user data
+
 **b) Projects**
 
 ## 5. Variables and data sources
@@ -66,6 +68,7 @@
 - Variable types
 - How to reference variables from lists and maps
 - Variable files
+
 **b) Data sources**
 - What are data sources
 - How are data sources used?
@@ -83,6 +86,7 @@
 - What are modules?
 - Custom modules
 - Official modules
+
 **b) Provisioners**
 - File
 - Remote exec
@@ -98,5 +102,5 @@
 ## 9. Local and Remote state data sources
 - Remote state data source
 - local state data source
-- remote state data source
+
 ## 10. Terraform best practices && Interview question
