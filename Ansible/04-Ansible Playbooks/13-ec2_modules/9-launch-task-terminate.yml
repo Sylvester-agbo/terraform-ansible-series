@@ -1,0 +1,53 @@
+- name: Create an ec2 instance
+  hosts: localhost
+  gather_facts: False
+  vars:
+    keypair: Mygitkey
+    instance_type: t2.micro
+    security_group: sg-0c11b10f7a54aa244
+    image: ami-01f87c43e618bf8f0
+    region: us-west-1
+  tasks:
+    - name: Launch instance
+      amazon.aws.ec2_instance:
+         key_name: "{{ keypair }}"
+         security_groups: "{{ security_group }}"
+         instance_type: "{{ instance_type }}"
+         image_id: "{{ image }}"
+         #image_id: ami-01f87c43e618bf8f0
+         wait: true
+         region: "{{ region }}"
+         vpc_subnet_id: subnet-074b9d5d
+         tags:
+            Name: postgres
+         #assign_public_ip: yes
+      register: ec2
+
+    - name: Add new instance to host group
+      add_host:
+        hostname: "{{ item.public_ip }}"
+        groupname: launched
+      loop: "{{ ec2.instances }}"
+
+    - name: Wait for SSH to come up
+      delegate_to: "{{ item.public_dns_name }}"
+      wait_for_connection:
+        delay: 60
+        timeout: 320
+      loop: "{{ ec2.instances }}"
+
+#- name: Configure instance(s)
+#  hosts: launched
+#  become: True
+#  gather_facts: True
+#  roles:
+  #  - my_awesome_role
+  #  - my_awesome_test
+
+- name: Terminate instances
+  hosts: localhost
+  tasks:
+    - name: Terminate instances that were previously launched
+      amazon.aws.ec2_instance:
+        state: 'absent'
+        instance_ids: '{{ ec2.instance_ids }}'

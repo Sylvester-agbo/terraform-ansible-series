@@ -1,0 +1,19 @@
+---
+ - name: AWS S3 Bucket Upload - Ansible
+   hosts: localhost
+   vars_files:
+    - ./external_vars.yaml
+   tasks:
+   - name: Upload/PUT file to S3 bucket
+     aws_s3:
+       aws_access_key: "{{ IMAGE_BUCKET_ACCESS_KEY }}"
+       aws_secret_key: "{{ IMAGE_BUCKET_SECRET_KEY }}"
+       bucket: "{{ IMAGE_BUCKET_NAME }}"
+       mode: put
+       object: script.sh
+       src: ./script.sh
+     register: putresult
+   - debug: msg="{{ putresult.msg }} and the S3 Object URL is {{putresult.url}}"
+     when: putresult.changed
+
+

@@ -1,0 +1,12 @@
+---
+ - name: Copy Objects from one S3 bucket to another
+   aws_s3:
+      bucket: my-terraformstate-landmark-buc
+      profile: default
+      object: ./upload.png
+      mode: copy
+      src:
+        bucket: class24landmarkteck1
+        object: "upload.png"
+      register: copyresult
+ - debug: msg="{{ copyresult.msg }}"

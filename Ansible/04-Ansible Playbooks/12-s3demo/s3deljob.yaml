@@ -1,0 +1,12 @@
+---
+- name: Delete object from AWS S3 bucket using Ansible
+  hosts: localhost
+  tasks:
+  - name: Delete Objects from S3 bucket
+    aws_s3:
+      bucket: my-terraformstate-landmark-buc
+      profile: default
+      object: instances-mod.tf
+      mode: delobj
+    register: delresult
+  - debug: msg="{{ delresult.msg }}"

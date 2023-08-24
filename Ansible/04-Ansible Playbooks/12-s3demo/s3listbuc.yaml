@@ -1,0 +1,11 @@
+---
+- name: AWS S3 Bucket List - Ansible
+  hosts: localhost
+  # Lists all s3 buckets
+  tasks:
+  - name: List all buckets
+    aws_s3_bucket_info:
+    register: result
+  - name: List buckets
+    ansible.builtin.debug:
+      msg: "{{ result['buckets'] }}"

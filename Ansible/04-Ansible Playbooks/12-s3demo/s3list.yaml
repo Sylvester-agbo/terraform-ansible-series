@@ -1,0 +1,11 @@
+---
+- name: AWS S3 Bucket List - Ansible
+  hosts: localhost
+  tasks:
+  - name: List keys or Objects
+    aws_s3:
+      profile: default
+      bucket: class24landmarkteck1
+      mode: list
+    register: listresult
+  - debug: msg={{listresult.s3_keys}}

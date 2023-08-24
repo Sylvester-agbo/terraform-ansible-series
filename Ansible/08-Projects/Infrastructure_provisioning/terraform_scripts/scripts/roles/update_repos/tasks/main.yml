@@ -1,0 +1,3 @@
+# tasks file for update_repos
+#- name: Updating repos
+#  shell: sudo yum update -y

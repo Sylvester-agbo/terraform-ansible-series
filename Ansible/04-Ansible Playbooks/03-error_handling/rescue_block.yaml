@@ -1,0 +1,25 @@
+#!/root/ansible/myansible/bin/ansible-playbook
+- name: Ansible Blocks
+  hosts: localhost
+  #remote_user: ec2-user
+
+  tasks:
+    - name: Testing blocks and rescue
+      block:
+        - name: Install v2
+          yum:
+             name: httpd-v2
+             state: present
+
+        - name: Failing intentionally
+          command: ls -l /tmp/
+      become: 'yes'
+      ignore_errors: yes
+
+      rescue:
+        - name: Rescue block by installing httpd-v1(perform recovery)
+          debug: msg='Something went wrong, cleaning up..'
+
+      always:
+        - name: This will execute always
+          debug: msg='I will execute even in failure scenario'

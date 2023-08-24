@@ -1,0 +1,23 @@
+---
+ - name: Install python
+   hosts: 54.67.56.152
+   remote_user: ansible
+   become: yes
+   gather_facts: false
+   tasks:
+   - name: Check for Python
+     raw: test -e /usr/bin/python
+     changed_when: false
+     failed_when: false
+     register: check_python
+   - debug: msg="{{ check_python }}"
+
+   - name: Install Python
+     raw: test -e /usr/bin/apt && (apt -y update && apt install -y python-minimal) || (yum -y  install python3.8)
+     when: check_python.rc != 0
+
+   - name: Check python version
+     command: python3 --version
+     register: python_version
+
+   - debug: msg="{{ python_version }}"

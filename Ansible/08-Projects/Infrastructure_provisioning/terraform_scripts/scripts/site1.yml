@@ -1,0 +1,18 @@
+#- name: Install Kubernetes #Dependencies
+ # import_playbook: #kube-dependencies3.yml
+#- name: Initialaize Kubernetes #Master
+ # import_playbook: #master-cluster1.yml
+#- name: Join workers to master
+  #import_playbook: #workers-cluster1.yml
+- name: Configure Tomcat server
+  import_playbook: tomcat.yml
+- name: Configure SonarQube server
+  import_playbook: sonarmain.yml
+- name: Configure Nexus server
+  import_playbook: nexus-install.yml
+#- name: Configure ansible server
+ # import_playbook: ansible.yaml
+#- name: Deploy ssh key exchange for all servers
+  #import_playbook: sshkey-deploy.yaml
+- name: Configure Jenkins server
+  import_playbook: mainjenkins.yml

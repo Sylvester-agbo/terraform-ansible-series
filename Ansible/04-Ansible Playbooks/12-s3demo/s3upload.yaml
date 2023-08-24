@@ -1,0 +1,14 @@
+---
+- name: AWS S3 Bucket Upload - Ansible
+  hosts: localhost
+  tasks:
+  - name: Upload/PUT file to S3 bucket
+    aws_s3:
+      profile: default
+      bucket: my-terraformstate-landmark-buc
+      mode: put
+      object: instances-mod.tf
+      src: ./instances-mod.tf
+    register: putresult
+  - debug: msg="{{ putresult.msg }} and the S3 Object URL is {{putresult.url}}"
+    when: putresult.changed

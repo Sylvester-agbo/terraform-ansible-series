@@ -1,0 +1,15 @@
+---
+- name: Download object from AWS S3 bucket using Ansible
+  hosts: localhost
+  tasks:
+  - name: GET/DOWNLOAD file from S3 bucket
+    aws_s3:
+      profile: default
+      bucket: my-terraformstate-landmark-buc
+      mode: get
+      object: instances-mod.tf
+      dest: ./insta-mod
+    register: getresult
+  - debug:
+      msg="{{ getresult.msg }}"
+    when: getresult.changed

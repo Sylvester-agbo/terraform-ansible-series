@@ -1,0 +1,16 @@
+---
+ - name: AWS S3 Bucket Upload - Ansible
+   hosts: localhost
+   vars_files:
+    - ./external_vars.yaml
+   tasks:
+    - name: Create a DB instance using the default AWS KMS encryption key
+      community.aws.rds_instance:
+        id: test-encrypted-db
+        state: present
+        engine: mariadb
+        storage_encrypted: True
+        db_instance_class: db.t2.medium
+        username: "{{ username }}"
+        password: "{{ password }}"
+        allocated_storage: "{{ allocated_storage }}"
