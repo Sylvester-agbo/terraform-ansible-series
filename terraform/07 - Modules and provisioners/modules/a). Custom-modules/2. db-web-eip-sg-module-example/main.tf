@@ -15,7 +15,6 @@ provider "aws" {
 
 module "db" {
   source = "./db"
-
 }
 
 module "web" {
