@@ -36,7 +36,7 @@ resource "aws_dynamodb_table" "terraform-lock" {
  }*/
 
 #4. Generate ssh_key
- /*  resource "tls_private_key" "ansible" {
+/*  resource "tls_private_key" "ansible" {
   algorithm = "RSA"
   rsa_bits  = 4096
 }
@@ -55,14 +55,14 @@ resource "aws_instance" "Kubernetes_Servers" {
   subnet_id              = element(aws_subnet.kubernetes_subnets.*.id, count.index)
   key_name               = var.key_name
   #user_data        = file("create_ansible_user.sh")
-    tags = {
-        Name = "Kubernetes_Servers"
-        Type = "Kubernetes_Master"
-   }
+  tags = {
+    Name = "Kubernetes_Servers"
+    Type = "Kubernetes_Master"
+  }
 }
 
 #7. Read and Copy the ssh_key generated to remote server.
- /* provisioner "file" {
+/* provisioner "file" {
     content     = aws_key_pair.ansiblesshkey.public_key
     destination = "/tmp/private_key"
   }
@@ -92,14 +92,14 @@ resource "aws_instance" "Kubernetes_Workers" {
   subnet_id              = element(aws_subnet.kubernetes_subnets.*.id, count.index)
   key_name               = var.key_name
   #user_data              = file("create_ansible_user.sh")
-  tags ={
+  tags = {
     Name = "Kubernetes_Servers"
     Type = "Kubernetes_Worker"
-   }
+  }
 }
 
 #11. Reads and Copies the ssh_keys to the remote kubernetes worker nodes.
- /* provisioner "file" {
+/* provisioner "file" {
     content     = aws_key_pair.ansiblesshkey.public_key
     destination = "/tmp/private_key"
   }
@@ -127,11 +127,11 @@ resource "aws_instance" "jenkins_worker" {
   vpc_security_group_ids = [aws_security_group.kubernetes_sg.id]
   subnet_id              = element(aws_subnet.kubernetes_subnets.*.id, count.index)
   key_name               = var.key_name
-      tags ={
-        Name = "jenkins_server"
-        Type = "jenkins_worker"
-     }
- }
+  tags = {
+    Name = "jenkins_server"
+    Type = "jenkins_worker"
+  }
+}
 #15. Create a sonarQube server
 resource "aws_instance" "sonarQube_worker" {
   count                  = 1
@@ -141,10 +141,10 @@ resource "aws_instance" "sonarQube_worker" {
   subnet_id              = element(aws_subnet.kubernetes_subnets.*.id, count.index)
   key_name               = var.key_name
 
-  tags ={
+  tags = {
     Name = "SonarQube_server"
     Type = "sonarQube_worker"
-   }
+  }
 }
 #16. Create Nexus server.
 resource "aws_instance" "nexus_worker" {
@@ -155,10 +155,10 @@ resource "aws_instance" "nexus_worker" {
   subnet_id              = element(aws_subnet.kubernetes_subnets.*.id, count.index)
   key_name               = var.key_name
 
-  tags ={
+  tags = {
     Name = "Nexus_server"
     Type = "nexus_worker"
-   }
+  }
 }
 #17. Create a Tomcat server .
 resource "aws_instance" "tomcat_worker" {
@@ -169,11 +169,11 @@ resource "aws_instance" "tomcat_worker" {
   subnet_id              = element(aws_subnet.kubernetes_subnets.*.id, count.index)
   key_name               = var.key_name
 
-  tags ={
+  tags = {
     Name = "Tomcat_server"
     Type = "tomcat_worker"
-   }
- }
+  }
+}
 
 #18. Create a Prometheus server .
 resource "aws_instance" "ansible_worker" {
@@ -184,8 +184,8 @@ resource "aws_instance" "ansible_worker" {
   subnet_id              = element(aws_subnet.kubernetes_subnets.*.id, count.index)
   key_name               = var.key_name
 
-  tags ={
+  tags = {
     Name = "ansible_server"
     Type = "ansible_worker"
-   }
- }
+  }
+}

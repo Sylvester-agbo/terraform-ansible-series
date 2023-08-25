@@ -36,7 +36,7 @@ resource "aws_route_table" "kubernetes_public_rt" {
   }
 }
 
- resource "aws_route_table_association" "rt_sub_association" {
+resource "aws_route_table_association" "rt_sub_association" {
   count          = length(var.subnets_cidr)
   subnet_id      = element(aws_subnet.kubernetes_subnets.*.id, count.index)
   route_table_id = aws_route_table.kubernetes_public_rt.id

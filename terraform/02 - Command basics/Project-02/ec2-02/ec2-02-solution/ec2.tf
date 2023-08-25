@@ -3,9 +3,9 @@ terraform {
   required_version = "~> 1.0"
   required_providers {
     aws = {
-        source  = "hashicorp/aws"
-        version = "~> 3.0"
-        # Optional but recommended in production
+      source  = "hashicorp/aws"
+      version = "~> 3.0"
+      # Optional but recommended in production
     }
   }
 }
@@ -19,7 +19,7 @@ provider "aws" {
 # Resource Block
 
 resource "aws_instance" "project2ec2" {
-  ami = ""
+  ami           = ""
   instance_type = "t2.micro"
 
   tags = {

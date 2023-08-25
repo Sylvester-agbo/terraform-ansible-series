@@ -7,15 +7,15 @@ output "sql_password" {
 }
 
 output "ssh_key" {
-  value = aws_key_pair.ssh.public_key
+  value     = aws_key_pair.ssh.public_key
   sensitive = true
 }
 
 terraform {
   backend "s3" {
     dynamodb_table = ""
-    key = "remotestate"
-    bucket = ""
-    region = ""
+    key            = "remotestate"
+    bucket         = ""
+    region         = ""
   }
 }

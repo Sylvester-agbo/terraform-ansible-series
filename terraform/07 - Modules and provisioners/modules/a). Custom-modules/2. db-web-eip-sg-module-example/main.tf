@@ -3,7 +3,7 @@ terraform {
   required_version = "~> 1.0" # which means any version equal & above 0.14 like 0.15, 0.16 etc and < 1.xx
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "~> 3.0"
     }
   }
@@ -14,18 +14,18 @@ provider "aws" {
 }
 
 module "db" {
-    source = "./db"
+  source = "./db"
 
 }
 
 module "web" {
-    source = "./web"
+  source = "./web"
 }
 
 output "PrivateIP" {
-    value = module.db.PrivateIP
+  value = module.db.PrivateIP
 }
 
 output "PublicIP" {
-    value = module.web.pub_ip
+  value = module.web.pub_ip
 }

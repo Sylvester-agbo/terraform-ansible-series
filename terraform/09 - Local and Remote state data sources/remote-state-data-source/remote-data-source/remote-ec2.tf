@@ -7,11 +7,11 @@ terraform {
     }
   }
 }
-  # Provider Block
+# Provider Block
 provider "aws" {
-    region  = "us-west-1"
-    profile = "Kenmak"
-  }
+  region  = "us-west-1"
+  profile = "Kenmak"
+}
 
 data "terraform_remote_state" "network" {
   backend = "s3"
@@ -29,10 +29,10 @@ data "terraform_remote_state" "network" {
   }
 }*/
 
-resource "aws_instance" "my-ec2"{
-  ami = data.aws_ami.amzlinux2.id
+resource "aws_instance" "my-ec2" {
+  ami           = data.aws_ami.amzlinux2.id
   instance_type = "t2.micro"
-  subnet_id = data.terraform_remote_state.network.outputs.public_subnets[1]
+  subnet_id     = data.terraform_remote_state.network.outputs.public_subnets[1]
 
   tags = {
     "Name" = "My_ec2"

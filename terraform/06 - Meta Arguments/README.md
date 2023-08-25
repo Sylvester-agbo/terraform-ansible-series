@@ -1,6 +1,6 @@
 ## Meta-Arguments
 (https://www.terraform.io/docs/language/meta-arguments/)
-- Meta-Arguments change a resource type's behavior (Example: count, for_each)
+- Meta-Arguments change or alter the behaviour of a resource (Example: count, for_each, depends_on, lifecycle)
 
 **depends_on**
 - The depends_on meta-argument, if present, must be a list of references to other resources or child modules in the same calling module. Arbitrary expressions are not allowed in the depends_on argument value, because its value must be known before Terraform knows resource relationships and thus before it can safely evaluate expressions.
@@ -161,7 +161,7 @@ Observations:
 2) Count.index will start from 0 and end with 1 for VM Names
 3) Review outputs in detail (for loop with list, maps, maps advanced, splat legacy and splat latest)
 ```
-
+                                                                                                                                                                   
 ## Step-08: Clean-Up
 ```t
 # Terraform Destroy

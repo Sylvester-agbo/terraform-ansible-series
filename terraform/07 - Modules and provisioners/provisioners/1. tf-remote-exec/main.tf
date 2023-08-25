@@ -1,10 +1,10 @@
 resource "aws_instance" "ec2-prod" {
-  ami = data.aws_ami.ami.id
-  instance_type = "t2.micro"
+  ami               = data.aws_ami.ami.id
+  instance_type     = "t2.micro"
   availability_zone = "us-east-2b"
-  key_name = aws_key_pair.ssh.key_name
+  key_name          = aws_key_pair.ssh.key_name
   vpc_security_group_ids = [
-    aws_security_group.prov_fw.id]
+  aws_security_group.prov_fw.id]
 
   /*
 
@@ -27,7 +27,7 @@ resource "aws_instance" "ec2-prod" {
 }
 
 resource "aws_key_pair" "ssh" {
-  key_name = "provkey"
+  key_name   = "provkey"
   public_key = file("~/testec2.pub") ##please extract the public key
 }
 
@@ -36,23 +36,23 @@ resource "aws_security_group" "prov_fw" {
   name = "prov_fw"
 
   ingress {
-    from_port = 22
-    protocol = "tcp"
-    to_port = 22
+    from_port   = 22
+    protocol    = "tcp"
+    to_port     = 22
     cidr_blocks = ["0.0.0.0/0"]
   }
 
   ingress {
-    from_port = 80
-    protocol = "tcp"
-    to_port = 80
+    from_port   = 80
+    protocol    = "tcp"
+    to_port     = 80
     cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {
-    from_port = 0
-    protocol = "-1"
-    to_port = 0
+    from_port   = 0
+    protocol    = "-1"
+    to_port     = 0
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
@@ -63,11 +63,11 @@ resource "null_resource" "prov_null" {
   }
 
   connection {
-    type = "ssh"
-    host = aws_instance.ec2-prod.public_ip
+    type        = "ssh"
+    host        = aws_instance.ec2-prod.public_ip
     private_key = file("~/testec2.pem") ##please input path to your private key
-    user = "ec2-user"
-    timeout = "1m"
+    user        = "ec2-user"
+    timeout     = "1m"
   }
 
   provisioner "remote-exec" {

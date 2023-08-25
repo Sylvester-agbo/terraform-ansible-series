@@ -9,7 +9,7 @@ resource "aws_subnet" "tfer--subnet-018ed5f7eee66429c" {
   map_customer_owned_ip_on_launch                = "false"
   map_public_ip_on_launch                        = "false"
   private_dns_hostname_type_on_launch            = "ip-name"
-  vpc_id                                         = "${data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-0b37c8c1dd6d9c791_id}"
+  vpc_id                                         = data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-0b37c8c1dd6d9c791_id
 }
 
 resource "aws_subnet" "tfer--subnet-01b4c67568e65bb1e" {
@@ -23,7 +23,7 @@ resource "aws_subnet" "tfer--subnet-01b4c67568e65bb1e" {
   map_customer_owned_ip_on_launch                = "false"
   map_public_ip_on_launch                        = "false"
   private_dns_hostname_type_on_launch            = "ip-name"
-  vpc_id                                         = "${data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-0b37c8c1dd6d9c791_id}"
+  vpc_id                                         = data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-0b37c8c1dd6d9c791_id
 }
 
 resource "aws_subnet" "tfer--subnet-03d61beb326f2b722" {
@@ -37,7 +37,7 @@ resource "aws_subnet" "tfer--subnet-03d61beb326f2b722" {
   map_customer_owned_ip_on_launch                = "false"
   map_public_ip_on_launch                        = "false"
   private_dns_hostname_type_on_launch            = "ip-name"
-  vpc_id                                         = "${data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-0b37c8c1dd6d9c791_id}"
+  vpc_id                                         = data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-0b37c8c1dd6d9c791_id
 }
 
 resource "aws_subnet" "tfer--subnet-05b6681a324cb2d1b" {
@@ -62,7 +62,7 @@ resource "aws_subnet" "tfer--subnet-05b6681a324cb2d1b" {
     "kubernetes.io/role/elb"     = "1"
   }
 
-  vpc_id = "${data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-099d0d73a05643898_id}"
+  vpc_id = data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-099d0d73a05643898_id
 }
 
 resource "aws_subnet" "tfer--subnet-05f2bb56aca525283" {
@@ -76,7 +76,7 @@ resource "aws_subnet" "tfer--subnet-05f2bb56aca525283" {
   map_customer_owned_ip_on_launch                = "false"
   map_public_ip_on_launch                        = "false"
   private_dns_hostname_type_on_launch            = "ip-name"
-  vpc_id                                         = "${data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-0b37c8c1dd6d9c791_id}"
+  vpc_id                                         = data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-0b37c8c1dd6d9c791_id
 }
 
 resource "aws_subnet" "tfer--subnet-07d5a2ed17b0dfdbd" {
@@ -101,7 +101,7 @@ resource "aws_subnet" "tfer--subnet-07d5a2ed17b0dfdbd" {
     "kubernetes.io/role/internal-elb" = "1"
   }
 
-  vpc_id = "${data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-099d0d73a05643898_id}"
+  vpc_id = data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-099d0d73a05643898_id
 }
 
 resource "aws_subnet" "tfer--subnet-08bef53b2e965961d" {
@@ -126,7 +126,7 @@ resource "aws_subnet" "tfer--subnet-08bef53b2e965961d" {
     "kubernetes.io/role/elb"     = "1"
   }
 
-  vpc_id = "${data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-099d0d73a05643898_id}"
+  vpc_id = data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-099d0d73a05643898_id
 }
 
 resource "aws_subnet" "tfer--subnet-0a90704d4a90e8f92" {
@@ -140,7 +140,7 @@ resource "aws_subnet" "tfer--subnet-0a90704d4a90e8f92" {
   map_customer_owned_ip_on_launch                = "false"
   map_public_ip_on_launch                        = "false"
   private_dns_hostname_type_on_launch            = "ip-name"
-  vpc_id                                         = "${data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-0b37c8c1dd6d9c791_id}"
+  vpc_id                                         = data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-0b37c8c1dd6d9c791_id
 }
 
 resource "aws_subnet" "tfer--subnet-0e9847e616e3ecc57" {
@@ -154,7 +154,7 @@ resource "aws_subnet" "tfer--subnet-0e9847e616e3ecc57" {
   map_customer_owned_ip_on_launch                = "false"
   map_public_ip_on_launch                        = "false"
   private_dns_hostname_type_on_launch            = "ip-name"
-  vpc_id                                         = "${data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-0b37c8c1dd6d9c791_id}"
+  vpc_id                                         = data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-0b37c8c1dd6d9c791_id
 }
 
 resource "aws_subnet" "tfer--subnet-0f2b281cbc436aee4" {
@@ -179,7 +179,7 @@ resource "aws_subnet" "tfer--subnet-0f2b281cbc436aee4" {
     "kubernetes.io/role/internal-elb" = "1"
   }
 
-  vpc_id = "${data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-099d0d73a05643898_id}"
+  vpc_id = data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-099d0d73a05643898_id
 }
 
 resource "aws_subnet" "tfer--subnet-b3fbc998" {
@@ -193,7 +193,7 @@ resource "aws_subnet" "tfer--subnet-b3fbc998" {
   map_customer_owned_ip_on_launch                = "false"
   map_public_ip_on_launch                        = "true"
   private_dns_hostname_type_on_launch            = "ip-name"
-  vpc_id                                         = "${data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-8d346af5_id}"
+  vpc_id                                         = data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-8d346af5_id
 }
 
 resource "aws_subnet" "tfer--subnet-cb8a3096" {
@@ -207,7 +207,7 @@ resource "aws_subnet" "tfer--subnet-cb8a3096" {
   map_customer_owned_ip_on_launch                = "false"
   map_public_ip_on_launch                        = "true"
   private_dns_hostname_type_on_launch            = "ip-name"
-  vpc_id                                         = "${data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-8d346af5_id}"
+  vpc_id                                         = data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-8d346af5_id
 }
 
 resource "aws_subnet" "tfer--subnet-de16bea6" {
@@ -221,7 +221,7 @@ resource "aws_subnet" "tfer--subnet-de16bea6" {
   map_customer_owned_ip_on_launch                = "false"
   map_public_ip_on_launch                        = "true"
   private_dns_hostname_type_on_launch            = "ip-name"
-  vpc_id                                         = "${data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-8d346af5_id}"
+  vpc_id                                         = data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-8d346af5_id
 }
 
 resource "aws_subnet" "tfer--subnet-ee1fcaa4" {
@@ -235,5 +235,5 @@ resource "aws_subnet" "tfer--subnet-ee1fcaa4" {
   map_customer_owned_ip_on_launch                = "false"
   map_public_ip_on_launch                        = "true"
   private_dns_hostname_type_on_launch            = "ip-name"
-  vpc_id                                         = "${data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-8d346af5_id}"
+  vpc_id                                         = data.terraform_remote_state.vpc.outputs.aws_vpc_tfer--vpc-8d346af5_id
 }
