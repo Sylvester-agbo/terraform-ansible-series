@@ -104,14 +104,15 @@ resource "aws_iam_user" "count1" {
 
 resource "aws_iam_user" "ternary" {
   count = var.check && length(var.user_names) > 0 && length(var.group) > 0 ? length(var.user_names) : 0
-  name = var.user_names[count.index]
+  name  = var.user_names[count.index]
 }
 
 variable "check" {
-  type = bool
+  type    = bool
   default = true
 }
 
 variable "group" {
-  type = list(string)
-  default = [ "dev", "prod", "uat"]
+  type    = list(string)
+  default = ["dev", "prod", "uat"]
+}

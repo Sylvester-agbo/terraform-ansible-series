@@ -6,12 +6,6 @@ terraform {
       version = "~> 4.0"
     }
   }
-
-  #backend "s3" {
-  # bucket = "my-elk-testing-bucket-254"
-  #key    = "vpc/terraform.tfstate"
-  # region = "us-west-2"
-  #}
 }
 
 provider "aws" {
