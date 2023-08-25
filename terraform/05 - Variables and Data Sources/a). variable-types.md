@@ -7,7 +7,7 @@
 
 The following example shows the variable types that are supported by terraform.
 
-#**String**
+**String**
  - Strings are usually represented by a double-quoted sequence of Unicode characters, "like this"
 ```t
 variable "vpcname" {
@@ -16,7 +16,7 @@ variable "vpcname" {
 }
 
 ```
-#**Number**
+**Number**
 
 - Numbers are represented by unquoted sequences of digits with or without a decimal point, like 15 or 6.283185.
 ```t
@@ -26,14 +26,14 @@ variable "sshport" {
 }
 ```
 
-#**Boolean**
+**Boolean**
 - Bools are represented by the unquoted symbols true and false.
 ```t
 variable "enabled" {
   default = false
 }
 ```
-#**List**
+**List**
 - Lists is represented by a pair of square brackets containing a comma-separated sequence of values, like ["a", 15, true].
 ```t
 variable "mylist" {
@@ -41,12 +41,12 @@ variable "mylist" {
   default = ["Value1", "Value2"]
 }
 ```
-#How to reference List values ?
+- How do you reference List values ?
 
-instance_type = var.mylist[1]
+     - instance_type = var.mylist[1]
 
-#**Map**
-- Maps/objects are represented by a pair of curly braces containing a series of <KEY> = <VALUE> pairs:
+**Map**
+- Maps/objects are represented by a pair of curly braces containing a series of KEY = VALUE pairs:
 ```T
 variable "mymap" {
   type = map
@@ -56,11 +56,11 @@ variable "mymap" {
   }
 }
 ```
-#How to reference Map values ?
+- How do you reference Map values ?
  
-instance_type = var.mymap["key1"]
+    - instance_type = var.mymap["key1"]
 
-#**Input**
+**Input**
  ```t
 variable "inputname" {
   type        = string
@@ -78,13 +78,13 @@ resource "aws_vpc" "myvpc" {
   }
 }
 ```
-#**Output**
+**Output**
 ```t
 output "vpcid" {
   value = aws_vpc.myvpc.id
 }
 ```
-#**Tuple**
+**Tuple**
 - Lists/tuples are represented by a pair of square brackets containing a comma-separated sequence of values, like ["a", 15, true].
 ```t
 variable "mytuple" {
@@ -92,7 +92,7 @@ variable "mytuple" {
   default = ["cat", 1, "dog"]
 }
 ```
-#**Objects**
+**Objects**
 ```t
 variable "myobject" {
   type = object({ name = string, port = list(number) })
@@ -102,9 +102,9 @@ variable "myobject" {
   }
 }
 ```
-#**Variables with Lists and Maps**
+**Variables with Lists and Maps**
 
-#AWS EC2 Instance Type - List
+a) AWS EC2 Instance Type - List
 ```t
  variable "instance_type_list" {
   description = "EC2 Instance Type"
@@ -115,7 +115,7 @@ variable "myobject" {
 #instance_type = var.instance_type_list[0]
 ```
  
-#AWS EC2 Instance Type - Map
+b) AWS EC2 Instance Type - Map
 ```t
  variable "instance_type_map" {
   description = "EC2 Instance Type"
