@@ -9,23 +9,25 @@
 - Terraform Datasources
 - Terraform Output Values
 
-### What are we going to learn ?
+### In this module, we will cover the following:
 1. Learn about Terraform `Input Variable` basics
   - AWS Region
   - Instance Type
   - Key Name
+  - Ami
 2. Define `Security Groups` and Associate them as a `List item` to AWS EC2 Instance  
   - vpc-ssh
   - vpc-web
 3. Learn about Terraform `Output Values`
   - Public IP
   - Public DNS
+  - arn
 4. Get latest EC2 AMI ID Using `Terraform Datasources` concept
-5. We are also going to use existing EC2 Key pair `Automationkey`
+5. We are also going to use existing EC2 Key pair `terraform-key`
 6. Use all the above to create an EC2 Instance in default VPC
 
 
-## Step-02: c2-variables.tf - Define Input Variables in Terraform
+## Step-02: variables.tf - Define Input Variables in Terraform
 - [Terraform Input Variables](https://www.terraform.io/docs/language/values/variables.html)
 
 ```t
