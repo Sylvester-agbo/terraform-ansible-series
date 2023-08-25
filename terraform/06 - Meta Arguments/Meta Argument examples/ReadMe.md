@@ -150,15 +150,17 @@ resource "google_compute_instance" "example" {
 
 - lifecycle is a nested block under resource that is used to customise that behaviour. Here are the following customisation that are available under lifecycle block
 
-## create_before_destroy: (Type: Bool)
+**create_before_destroy: (Type: Bool)**
 For resource, where Terraform cannot do an in place updation due to API limitation, its default behaviour is to destroy the resource first and then re-create it. This can be changed by using this argument. It will first create the updated resource and then delete the old one.
 
-## prevent_destroy: (Type: Bool)
+**prevent_destroy: (Type: Bool)**
 This will prevent the resource from destroying. It is a useful measure where we want to prevent a resource against accidental replacement such as database instances.
 
-## ignore_changes: (Type: List(Attribute Names))
+**ignore_changes: (Type: List(Attribute Names))**
 By default, If Terraform detects any difference in the current state, it plans to update the remote object to match configuration. The ignore_changes feature is intended to be used when a resource is created with references to data that may change in the future, but should not affect said resource after its creation. It expects a list or map of values, whose updation will not recreate the resource. If we want all attributes to be passed here, we can simply use all.
-## Ignore tag changes and won't recreate this resource if tags are updated
+
+- Ignore tag changes and won't recreate this resource if tags are updated
+```
 resource "aws_instance" "example" {
   lifecycle {
     ignore_changes = [
@@ -166,3 +168,4 @@ resource "aws_instance" "example" {
    ]
    }
 }
+```
