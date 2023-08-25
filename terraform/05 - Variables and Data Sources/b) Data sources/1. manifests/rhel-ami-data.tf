@@ -1,10 +1,10 @@
-data "aws_ami" "ubuntu" {
+data "aws_ami" "rhel" {
   most_recent = true
-  owners      = ["099720109477"]
+  owners      = ["309956199498"]
 
   filter {
     name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
+    values = ["RHEL-9.2.0_HVM-*-GP2"]
   }
 
   filter {

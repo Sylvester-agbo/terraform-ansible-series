@@ -4,7 +4,7 @@ data "aws_ami" "rhel" {
 
   filter {
     name   = "name"
-    values = ["RHEL_HA-8.4.0_HVM-*-GP2"]
+    values = ["RHEL-9.2.0_HVM-*-GP2"]
   }
 
   filter {
@@ -22,3 +22,4 @@ data "aws_ami" "rhel" {
   }
 
 }
+
