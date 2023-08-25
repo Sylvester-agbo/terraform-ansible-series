@@ -162,19 +162,7 @@ Observations:
 3) Review outputs in detail (for loop with list, maps, maps advanced, splat legacy and splat latest)
 ```
 
-## Step-08: Terraform Comments
-- Single Line Comments - `#` and `//`
-- Multi-line Commnets - `Start with /*` and `end with */`
-- We are going to comment the legacy splat operator, which might be decommissioned in future versions
-```t
-# Output Legacy Splat Operator (latest) - Returns the List
-/* output "legacy_splat_instance_publicdns" {
-  description = "Legacy Splat Expression"
-  value = aws_instance.myec2vm.*.public_dns
-}  */
-```
-
-## Step-09: Clean-Up
+## Step-08: Clean-Up
 ```t
 # Terraform Destroy
 terraform destroy -auto-approve
