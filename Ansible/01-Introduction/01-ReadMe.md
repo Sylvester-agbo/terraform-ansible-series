@@ -1,15 +1,15 @@
-## **Introduction to Ansible**
-    https://github.com/Kenmakhanu/Ansible.git
+#**Introduction to Ansible**
+
 - Ansible is an open-source configuration Management,
 deployment and provisioning Automation tool maintained by Redhat.
 - It is very, very simple to setup and yet powerful.
 - Ansible will be helpful to perform:
-    . Configuration Management
-    . Application Deployment
-    . Task Automation
-    . IT Orchestration
+    - Configuration Management
+    - Application Deployment
+    - Task Automation
+    - IT Orchestration
 
-## **How Ansible works**
+**How Ansible works**
   - Ansible works by connecting to remote nodes (hosts) and pushing out small programs, called “Ansible
     modules” to them.
   - The pushed programs/modules will be executed on remote server by Ansible over SSH and removes them
@@ -18,7 +18,7 @@ deployment and provisioning Automation tool maintained by Redhat.
   - It’s written in Python which needs to be installed on the remote host.
   - This means that you don’t have to setup a client server environment before using Ansible
 
-## **Benefits of using Ansible**
+**Benefits of using Ansible**
  - It is a free open -source Automation tool and simple to use.
  - Uses existing OpenSSH for connection
  - Agent-less – No need to install any agent on Ansible Clients/Nodes

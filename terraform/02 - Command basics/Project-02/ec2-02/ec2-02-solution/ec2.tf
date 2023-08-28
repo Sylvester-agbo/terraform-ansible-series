@@ -26,3 +26,4 @@ resource "aws_instance" "project2ec2" {
     Name = "FirstEC2"
   }
 }
+

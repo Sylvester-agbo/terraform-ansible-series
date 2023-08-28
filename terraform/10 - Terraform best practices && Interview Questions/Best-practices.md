@@ -1,4 +1,4 @@
-## Terraform security:
+## Terraform Best Practices:
 - Don't commit the .tfstate file.
 - Configure a backend.(state locking / remote state storage)
 - Back up your state files.Use versioning
