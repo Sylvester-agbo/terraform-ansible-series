@@ -1,4 +1,4 @@
-## **Examples of Ad-hoc Commands**
+# **Examples of Ad-hoc Commands**
 
 $ ansible all -m ping          :  => ping module
 

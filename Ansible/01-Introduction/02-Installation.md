@@ -6,22 +6,12 @@ supported for the control node.
 have python2 or python3 installed on them.
 
 - Ansible can be installed in three ways:
-<<<<<<< HEAD
     - Using yum or apt
     - Using pip
     - Using compile file
 https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
 
-## **Installing Ansible on Ubuntu**
-#
-=======
-  - Using yum or apt
-  - Using pip
-  - Using compile file
-https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
-
 **Installing Ansible on Ubuntu**
->>>>>>> c8b51cc (seventh)
 ```
   $ sudo adduser ansible \
   $ echo "ansible ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/ansible \
@@ -29,12 +19,8 @@ https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.ht
   $ sudo apt-add-repository ppa:ansible/ansible \
   $ sudo apt install ansible -y
 ```
-<<<<<<< HEAD
-## **Ansible installation on REDHAT EC2**
-#
-=======
 **Ansible installation on REDHAT EC2**
->>>>>>> c8b51cc (seventh)
+
 ```
   $sudo useradd ansible \
   $sudo hostname ansible \
@@ -44,8 +30,6 @@ https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.ht
   $ sudo alternatives --set python /usr/bin/python3 \
   $ sudo yum -y install python3-pip -y \
   $ pip3 install ansible --user
-<<<<<<< HEAD
+
 ```
-=======
-```
->>>>>>> c8b51cc (seventh)
+

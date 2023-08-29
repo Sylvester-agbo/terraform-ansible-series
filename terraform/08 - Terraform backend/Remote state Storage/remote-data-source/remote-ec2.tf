@@ -3,7 +3,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 5.0"
+      version = "~> 3.0"
     }
   }
 }
@@ -21,19 +21,26 @@ data "terraform_remote_state" "network" {
   }
 }
 
-/*data "terraform_remote_state" "network" {
+/*
+data "terraform_remote_state" "network" {
   backend = "local"
   config = {
-      path    = "../remote-data-source/terraform.tfstate"
+      path    = "../../backend/terraform.tfstate"
   }
-}*/
-
-resource "aws_instance" "my-ec2" {
+}
+*/
+resource "aws_instance" "dev" {
   ami           = data.aws_ami.amzlinux2.id
   instance_type = "t2.micro"
-  subnet_id     = data.terraform_remote_state.network.outputs.public_subnets[1]
+  subnet_id     = data.terraform_remote_state.network.outputs.private_subnets[1]
 
   tags = {
     "Name" = "My_ec2"
   }
 }
+
+moved {
+  from = aws_instance.my-ec2
+  to   = aws_instance.dev
+}
+
