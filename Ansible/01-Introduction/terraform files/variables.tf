@@ -10,7 +10,10 @@ variable "my_instance_type" {
 
 variable "my_key" {
   type    = string
-  default = "Mygitkey"
+  default = "ansible-key"
 }
+
+#sudo su - ansible
+#chown -R ansible:ansible /etc/ansible
 
 
