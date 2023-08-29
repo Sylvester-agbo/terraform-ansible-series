@@ -74,7 +74,13 @@
 ## **b) Password-less Authentication (Using SSH_Keys)**
 
 - Generate ssh-keys using ssh-keygen command from ansible user in the control machine.
+
+      $ ssh-keygen
+
 - Copy ssh public key using ssh-copy-id <hostname> from /home/ansible/.ssh/ location.
+
+      $ ssh-copy-id <hostname/ip>
+
 - Now login to remote server without providing password with the following command:
 
       $ ssh user_name@hostname
