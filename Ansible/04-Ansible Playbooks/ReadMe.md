@@ -52,7 +52,8 @@
 - A dictionary is represented in a simple key: value form (the colon must be followed by a space): 
 ```
 # An employee record martin:
-  name: Martin D'vloper job: Developer
+  name: Martin D'vloper 
+  job: Developer
   skill: Elite
 ```
 
