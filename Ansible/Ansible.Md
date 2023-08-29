@@ -32,6 +32,8 @@
 **a) Adhoc commands?**
 - What are adhoc commands?
 - Examples of adhoc commands
+- Using custom inventory files
+- Using verbosity ( - v)
 
 **b) Ansible modules?**
 - What are modules
