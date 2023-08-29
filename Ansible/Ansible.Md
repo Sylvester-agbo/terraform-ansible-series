@@ -22,8 +22,6 @@
 - Creating a user on managed node
 - Enabling password authentication on manged nodes
 - Testing connectivity with user using password
-- Using Host variables in host file
-- Using group variables in host file
 
 **b) Passwordless Authentication:**
 - How to create ssh keys
