@@ -59,5 +59,5 @@
 - What are data sources
 - How are data sources used?
 
-## 6. Meta arguments
+## 6. Ansible Vault
 
