@@ -1,6 +1,7 @@
-ansible all -m yum -a "name=httpd state=present" -b
+#ansible all -m yum -a "name=httpd state=present" -b
 ---
- - hosts: web
+ - name: httpd
+   hosts: web
    become: yes
    tasks:
    - name: Install httpd

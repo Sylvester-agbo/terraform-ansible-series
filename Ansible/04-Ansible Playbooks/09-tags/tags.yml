@@ -19,7 +19,7 @@
         tags:
           - third
           - common
-          - never
+          #- never
       - debug:
           msg: "This is a fourth task"
         tags:

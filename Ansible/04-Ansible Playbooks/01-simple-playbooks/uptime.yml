@@ -6,4 +6,5 @@
      shell: df -h
      register: results
    - debug:
-      msg: "results"
+      msg: "{{results}}"
+      #var: "results"

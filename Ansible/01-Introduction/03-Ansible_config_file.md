@@ -11,6 +11,8 @@
  in which we can make various settings like location of inventory file, host_key_checking as False
 - But we can define ansible configuration file in different location
 and for this there is a priority for this files.
+- You can generate ansible.cfg by running the command
+    $ ansible-config init --disabled > ansible.cfg
 
 **Locations with priority(starting from top to bottom):** 
 - ANSIBLE_CONFIG environment variable  

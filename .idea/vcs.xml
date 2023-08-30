@@ -3,7 +3,5 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Ansible/04-Ansible Playbooks/01-simple-playbooks" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Ansible/cloud/cloud-custodian" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Ansible/projects/ecs-fargate/fatlambda-demo" vcs="Git" />
   </component>
 </project>
